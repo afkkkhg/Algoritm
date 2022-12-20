@@ -1,13 +1,9 @@
 # class Solution(object):
 def getDecimalValue(self, head): # создаем функцию
     noun = head # вводим переменную
-    num = ''
+    num = '' # просто пустая строка
     while noun!= None: # проверяем пока значение не достигнет "никокого значения"
-        num = num + str(noun.val)
+        num = num + str(noun.val) # + строка с текущем значением
         noun = noun.next # перезаписываем текущее значение на следущий элемент
 
-    count = 0
-    for i in range(len(num)):  # перевод в другую систему исчисления
-        count += int(num[len(num) - 1 - i]) * 2 ** i
-
-    return count
+    return int(num, base=2) # далее base - основание системы исчесления = 2, то есть свою строку переводим в десятичную систему исчесления
